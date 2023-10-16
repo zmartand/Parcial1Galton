@@ -1,11 +1,4 @@
-package org.example;
-
-import org.example.BufferCompartido;
-import org.example.EstacionDeTrabajo;
-import org.example.FabricaVisual;
-import org.example.LineaDeEnsamblaje;
-
-import java.util.concurrent.ExecutorService;
+package org.example;import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class FabricaCampanaDeGauss {

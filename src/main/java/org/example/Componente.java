@@ -5,10 +5,10 @@ public class Componente {
     private final long id;
     private final long tiempoProduccion;
 
-    public Componente(String tipo, long id, long tiempoProduccion) {
+    public Componente(String tipo, long id) {
         this.tipo = tipo;
         this.id = id;
-        this.tiempoProduccion = tiempoProduccion;
+        this.tiempoProduccion = System.currentTimeMillis();
     }
 
     public String getTipo() {

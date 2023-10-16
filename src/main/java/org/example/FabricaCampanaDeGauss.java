@@ -2,9 +2,11 @@ package org.example;import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class FabricaCampanaDeGauss {
+
     private static final int NUM_ESTACIONES = 5;
 
-    public static void main(String[] args) {
+    public void ejecutar() {
+
         FabricaVisual visual = new FabricaVisual();
         BufferCompartido buffer = new BufferCompartido(10);
 

@@ -17,7 +17,7 @@ public class LineaDeEnsamblaje implements Runnable{
                 Componente componente = buffer.consumir();
                 ensamblarMaquina(); // Método para ensamblar la máquina
                 // Simular la caída de bolas en el histograma
-                int index = (int) (Math.random() * 10); // Simulación de la caída
+                int index = generarIndexDistribucionGauss(); // Simulación de la caída
                 histogramaValores[index]++;
                 visual.actualizarHistograma(histogramaValores);
 
@@ -37,5 +37,13 @@ public class LineaDeEnsamblaje implements Runnable{
             Thread.currentThread().interrupt();
         }
         System.out.println("Máquina ensamblada exitosamente!!");
+    }
+    private int generarIndexDistribucionGauss() {
+        double rand = Math.random();
+        double gauss = Math.sin(2 * Math.PI * rand) * Math.sqrt(-2 * Math.log(rand));
+        int index = (int) ((gauss + 2) * 2.5); // Convertir de rango [-2, 2] a [0, 9]
+        if (index < 0) index = 0;
+        if (index > 9) index = 9;
+        return index;
     }
 }

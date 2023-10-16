@@ -1,3 +1,5 @@
+package org.example;
+
 import org.example.BufferCompartido;
 import org.example.EstacionDeTrabajo;
 import org.example.FabricaVisual;
@@ -16,7 +18,7 @@ public class FabricaCampanaDeGauss {
         String[] tiposComponentes = {"TipoA", "TipoB", "TipoC", "TipoD", "TipoE"};
         ExecutorService executor = Executors.newFixedThreadPool(NUM_ESTACIONES + 1);
         for (int i = 0; i < NUM_ESTACIONES; i++) {
-            executor.execute(new EstacionDeTrabajo(buffer, tiposComponentes[i],visual, i ));
+            executor.execute(new EstacionDeTrabajo(buffer, tiposComponentes[i], visual, i));
         }
         executor.execute(new LineaDeEnsamblaje(buffer, visual));
         executor.shutdown();

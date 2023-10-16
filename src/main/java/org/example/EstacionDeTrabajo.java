@@ -7,7 +7,7 @@ public class EstacionDeTrabajo implements Runnable {
     private final FabricaVisual visual;
 
 
-    public EstacionDeTrabajo(BufferCompartido buffer, String tipoComponente, int indiceEstacion, FabricaVisual visual) {
+    public EstacionDeTrabajo(BufferCompartido buffer, String tipoComponente , FabricaVisual visual, int indiceEstacion) {
         this.buffer = buffer;
         this.tipoComponente = tipoComponente;
         this.indiceEstacion = indiceEstacion;

@@ -2,9 +2,11 @@ package org.example;
 
 public class LineaDeEnsamblaje implements Runnable{
     private final BufferCompartido buffer;
+    private final FabricaVisual visual;
 
-    public LineaDeEnsamblaje(BufferCompartido buffer) {
+    public LineaDeEnsamblaje(BufferCompartido buffer, FabricaVisual visual) {
         this.buffer = buffer;
+        this.visual = visual;
     }
 
     @Override
@@ -13,6 +15,7 @@ public class LineaDeEnsamblaje implements Runnable{
             for (int i = 1; i <= 100; i++) {
                 Componente componente = buffer.consumir();
                 ensamblarMaquina(); // Método para ensamblar la máquina
+                visual.actualizarEnsamblaje(i);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

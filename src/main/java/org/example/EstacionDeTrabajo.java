@@ -1,6 +1,6 @@
 package org.example;
 
-public class EstacionDeTrabajo {
+public class EstacionDeTrabajo implements Runnable {
     private final BufferCompartido buffer;
     private final String tipoComponente;
     private final int indiceEstacion;
@@ -11,4 +11,8 @@ public class EstacionDeTrabajo {
         this.indiceEstacion = indiceEstacion;
     }
 
+    @Override
+    public void run() {
+        
+    }
 }
